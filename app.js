@@ -1,22 +1,59 @@
 // find element
-let leftAye = document.querySelector('leftAye')
-let rightAye = document.querySelector('rightAye')
+let leftEye = document.querySelector('.leftEye')
+let rightEye = document.querySelector('.rightEye')
 let userInput = document.querySelector('#userInput')
 let passInput = document.querySelector('#passInput')
 
 // default values left aye
-let leftAyeTop = 75
-let leftAyeLeft = 112
-let leftAyePaddingLeft = 0
-let leftAyePaddingright = 0
+let leftEyeTop = 75
+let leftEyeLeft = 112
+let leftEyePaddingLeft = 0
+let leftEyePaddingright = 0
 
 // default values right aye
-let rightAyeTop = 75
-let rightAyeLeft = 174
-let rightAyePaddingLeft = 0
-let rightAyePaddingright = 0
+let rightEyeTop = 75
+let rightEyeLeft = 174
+let rightEyePaddingLeft = 0
+let rightEyePaddingright = 0
 
 // define functions
+
+
+const userInputFocus = () => {
+
+}
+
+const userInputBlur = () => {
+
+}
+
+const userInputKeyHandler = (e) => {
+
+}
+
+const passInputFocus = () => {
+    let Interval = setInterval(() => {
+        if (leftEyeTop === 60) {
+            clearInterval(Interval)
+        }
+        leftEye.style.top = leftEyeTop + "px"
+        leftEyeTop--
+        rightEye.style.top = rightEyeTop + "px"
+        rightEyeTop--
+    }, 20)
+}
+
+const passInputBlur = () => {
+    let Interval = setInterval(() => {
+        if (leftEyeTop === 75) {
+            clearInterval(Interval)
+        }
+        leftEye.style.top = leftEyeTop + "px"
+        leftEyeTop++
+        rightEye.style.top = rightEyeTop + "px"
+        rightEyeTop++
+    }, 20)
+}
 
 
 // set events on userInput
